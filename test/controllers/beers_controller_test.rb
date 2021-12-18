@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class BeersControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,8 +16,8 @@ class BeersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create beer" do
-    assert_difference('Beer.count') do
-      post beers_url, params: { beer: { brand: @beer.brand, country: @beer.country, quantity: @beer.quantity, style: @beer.style } }
+    assert_difference("Beer.count") do
+      post beers_url, params: {beer: {brand: @beer.brand, country: @beer.country, quantity: @beer.quantity, style: @beer.style}}
     end
 
     assert_redirected_to beer_url(Beer.last)
@@ -34,12 +34,12 @@ class BeersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update beer" do
-    patch beer_url(@beer), params: { beer: { brand: @beer.brand, country: @beer.country, quantity: @beer.quantity, style: @beer.style } }
+    patch beer_url(@beer), params: {beer: {brand: @beer.brand, country: @beer.country, quantity: @beer.quantity, style: @beer.style}}
     assert_redirected_to beer_url(@beer)
   end
 
   test "should destroy beer" do
-    assert_difference('Beer.count', -1) do
+    assert_difference("Beer.count", -1) do
       delete beer_url(@beer)
     end
 
