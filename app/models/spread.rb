@@ -2,7 +2,7 @@ class Spread
   include Redis::Objects
   class << self
     def list
-      currencies = %w[CRO WBTC WETH SHIB]
+      currencies = %w[CRO WBTC ETH SHIB]
       list = []
       currencies.each do |currency|
         spread = Redis::Objects.redis.get(currency)

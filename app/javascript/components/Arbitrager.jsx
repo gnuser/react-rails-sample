@@ -1,7 +1,8 @@
 import { Table, message, Popconfirm } from "antd";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 class Arbitrager extends React.Component {
+  
   columns = [
     {
       title: "Currency",
@@ -41,6 +42,9 @@ class Arbitrager extends React.Component {
 
   componentDidMount() {
     this.loadSpreads();
+    setInterval(() => {
+      this.reloadSpreads();
+    }, 5000);
   }
 
   loadSpreads = () => {

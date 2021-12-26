@@ -13,6 +13,6 @@ export default () => (
         <Arbitrager />
       </div>
     </Content>
-    <Footer style={{ textAlign: "center" }}>Honeybadger ©2020.</Footer>
+    <Footer style={{ textAlign: "center" }}>Less Coding ©2021.</Footer>
   </Layout>
 );
