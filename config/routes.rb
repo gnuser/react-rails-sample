@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       get "beers/index"
       post "beers/create"
       delete "beers/:id", to: "beers#destroy"
+
+      get "arbitrage/index"
     end
   end
 
