@@ -10,18 +10,18 @@ class Arbitrager extends React.Component {
     },
     {
       title: "Buy Price",
-      dataIndex: "buyPrice",
-      key: "buyPrice",
+      dataIndex: "buy_price",
+      key: "buy_price",
     },
     {
       title: "Sell Price",
-      dataIndex: "sellPrice",
-      key: "sellPrice",
+      dataIndex: "sell_price",
+      key: "sell_price",
     },
     {
       title: "Exchange Price",
-      dataIndex: "exchangePrice",
-      key: "exchangePrice",
+      dataIndex: "exchange_price",
+      key: "exchange_price",
     },
     {
       title: "Diff",
@@ -53,14 +53,16 @@ class Arbitrager extends React.Component {
         throw new Error("Network error.");
       })
       .then((data) => {
-        data.forEach((beer) => {
+        data.forEach((spread) => {
           const newEl = {
-            key: beer.id,
-            id: beer.id,
-            brand: beer.brand,
-            style: beer.style,
-            country: beer.country,
-            quantity: beer.quantity,
+            key: spread.currency,
+            id: spread.currency,
+            currency: spread.currency,
+            buy_price: spread.buy_price,
+            sell_price: spread.sell_price,
+            exchange_price: spread.exchange_price,
+            diff: spread.diff,
+            message: spread.message
           };
 
           this.setState((prevState) => ({

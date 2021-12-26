@@ -3,7 +3,7 @@ class Api::V1::ArbitrageController < ApplicationController
   # GET /beers
   # GET /beers.json
   def index
-    @beers = Beer.all.order(brand: :asc)
-    render json: @beers
+    @spreads = Spread.list
+    render json: @spreads
   end
 end
